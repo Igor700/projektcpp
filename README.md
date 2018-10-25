@@ -4,7 +4,8 @@ Kalkulator
 
 OPIS PROJEKTU:
 
-Moim projektem będzie multifunkcjonalny kalkluator na systemy Windows. Gotowy program będzie działał offline, jego interfejs będzie przejrzysty i funkcjonalny. Można go wykorzystywać na co dzień do wszelakich obliczeń arytmetycznych lub kontwertowaniu jednostek.
+Moim projektem będzie multifunkcjonalny kalkluator na systemy Windows. Gotowy program będzie działał offline, jego interfejs będzie przejrzysty i funkcjonalny. Żeby uzyskać aktualne kursy walut, wymagane będzie połączenie z internetem.
+ Można go wykorzystywać na co dzień do wszelakich obliczeń arytmetycznych lub kontwertowaniu jednostek.
 
 FUNKCJONALNOŚCI:
 
@@ -12,6 +13,7 @@ FUNKCJONALNOŚCI:
 -obliczanie daty
 -przeliczanie jednostek
 -rysowanie wykresów trygonometrycznych
+-kalkulator walut aktualizowany online
 
 DANE TECHNICZNE:
 
