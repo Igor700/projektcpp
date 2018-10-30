@@ -12,8 +12,8 @@ FUNKCJONALNOŚCI:
 -kalkulator z podstawowymi operacjami arytmetycznymi
 -obliczanie daty
 -przeliczanie jednostek
--rysowanie wykresów trygonometrycznych
--kalkulator walut aktualizowany online
+-rysowanie wykresów
+-kalkulator walut aktualizowany online (kursy pobierane z bazy online)
 
 DANE TECHNICZNE:
 
@@ -27,8 +27,10 @@ HARMONOGRAM PRACY:
 
 15.12.2018r. - Przeliczanie jednostek 
 
-01.01.2019r. Rysowanie wykresów
+01.01.2019r. - Rysowanie wykresów
 
-05.01.2019r.  Optymalizacje programu
+15.01.2019r. - Kalkulator walut
+
+Do ostatnich zajęć - Optymalizacja
 
 Ostatnie zajęcia - Końcowy projekt
