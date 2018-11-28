@@ -58,8 +58,14 @@ private slots:
     void on_reset_clicked();
 
     void on_back_clicked();
+	
+	void on_actionPrzelicznik_jednostek_triggered();
 
     void on_actionKalkulator_triggered();
+	
+	void on_comboBox_activated(int index);
+
+    void on_input_textChanged(const QString &arg1);
 
 
 
