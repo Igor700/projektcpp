@@ -66,6 +66,8 @@ private slots:
 	void on_comboBox_activated(int index);
 
     void on_input_textChanged(const QString &arg1);
+	
+	void on_calendarWidget_selectionChanged();
 
 
 
