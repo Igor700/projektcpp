@@ -1,0 +1,4 @@
+Nowa funkcjonalność-rysowanie wykresów
+Na razie można proste wykresy funkcji liniowej typu y=ax+b. Użytkownik wprowadza wartość a i b. 
+Wykres automatycznie się replotuje.
+Będzie dodana możliwość rysowania funkcji wielomianów wyższego stopnia.
