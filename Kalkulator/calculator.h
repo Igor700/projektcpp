@@ -2,7 +2,7 @@
 #define CALCULATOR_H
 
 #include <QMainWindow>
-
+#include "qcustomplot.h"
 
 namespace Ui {
 class Calculator;
@@ -16,6 +16,7 @@ public:
     explicit Calculator(QWidget *parent = 0);
     ~Calculator();
 
+    void chart(QCustomPlot *customPlot);
 
 
 private slots:
@@ -68,6 +69,11 @@ private slots:
     void on_input_textChanged(const QString &arg1);
 	
 	void on_calendarWidget_selectionChanged();
+
+    void on_xmin_valueChanged();
+
+    void on_xmax_valueChanged();
+
 
 
 

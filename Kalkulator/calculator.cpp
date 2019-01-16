@@ -1,5 +1,6 @@
 #include "calculator.h"
 #include "ui_calculator.h"
+#include "qcustomplot.h"
 #include <QDebug>
 #include <QSound>
 #include <QDate>
@@ -33,7 +34,7 @@ Calculator::Calculator(QWidget *parent) :
     measure << "Centymetry" << "Metry" << "Kilometry";
 
 	ui->calendarWidget->setMinimumDate(QDate::currentDate());
-
+    chart(ui->chart);
 
 
 
@@ -1029,6 +1030,49 @@ void Calculator::on_calendarWidget_selectionChanged()
         ui->label_4->setText("Różnica to: "+QString::number(diff)+" dni");
     }
 
+}
+
+void Calculator::chart(QCustomPlot *customPlot)
+{
+    customPlot = ui->chart;
+    int a = ui->xmin->value();
+    int b = ui->xmax->value();
+    QVector<double> x(50), y(50);
+
+
+        for (int i=0; i<50; ++i)
+        {
+          x[i] = i-25;
+          y[i] = a*x[i]+b;
+        }
+
+
+    customPlot->addGraph();
+    customPlot->graph(0)->setData(x, y);
+
+    customPlot->xAxis->setLabel("x");
+    customPlot->yAxis->setLabel("y");
+
+
+    customPlot->xAxis->setRange(-10,10);
+    customPlot->yAxis->setRange(-10,10);
+
+
+
+    customPlot->replot();
+}
+
+
+
+
+void Calculator::on_xmin_valueChanged()
+{
+    chart(ui->chart);
+}
+
+void Calculator::on_xmax_valueChanged()
+{
+    chart(ui->chart);
 }
 
 void Calculator::on_actionKalkulator_triggered()
