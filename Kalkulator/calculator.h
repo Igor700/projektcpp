@@ -78,6 +78,14 @@ private slots:
 
     void on_d_valueChanged();
 
+    void on_a2_valueChanged();
+
+    void on_b2_valueChanged();
+
+    void on_c2_valueChanged();
+
+    void on_d2_valueChanged();
+
 
 
 

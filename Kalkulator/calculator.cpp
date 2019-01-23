@@ -1034,23 +1034,39 @@ void Calculator::on_calendarWidget_selectionChanged()
 
 void Calculator::chart(QCustomPlot *customPlot)
 {
+    customPlot->addGraph();
+    customPlot->graph(0)->setPen(QPen(Qt::red));
+    customPlot->addGraph();
     customPlot = ui->chart;
     int a = ui->a->value();
     int b = ui->b->value();
     int c = ui->c->value();
     int d = ui->d->value();
+
+    int a2 = ui->a2->value();
+    int b2 = ui->b2->value();
+    int c2 = ui->c2->value();
+    int d2 = ui->d2->value();
     QVector<double> x(500), y(500);
+    QVector<double> x2(500), y2(500);
 
 
         for (int i=0; i<500; ++i)
         {
           x[i] = i/50.0-5;
           y[i] = a*(pow(x[i],3))+b*(pow(x[i],2))+c*x[i]+d;
+
+          x2[i] = i/50.0-5;
+          y2[i] = a2*(pow(x2[i],3))+b2*(pow(x2[i],2))+c2*x2[i]+d2;
         }
 
 
-    customPlot->addGraph();
+
+
+
     customPlot->graph(0)->setData(x, y);
+
+    customPlot->graph(1)->setData(x2, y2);
 
     customPlot->xAxis->setLabel("x");
     customPlot->yAxis->setLabel("y");
@@ -1083,6 +1099,26 @@ void Calculator::on_c_valueChanged()
 }
 
 void Calculator::on_d_valueChanged()
+{
+    chart(ui->chart);
+}
+
+void Calculator::on_a2_valueChanged()
+{
+    chart(ui->chart);
+}
+
+void Calculator::on_b2_valueChanged()
+{
+    chart(ui->chart);
+}
+
+void Calculator::on_c2_valueChanged()
+{
+    chart(ui->chart);
+}
+
+void Calculator::on_d2_valueChanged()
 {
     chart(ui->chart);
 }
