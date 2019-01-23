@@ -70,9 +70,13 @@ private slots:
 	
 	void on_calendarWidget_selectionChanged();
 
-    void on_xmin_valueChanged();
+    void on_a_valueChanged();
 
-    void on_xmax_valueChanged();
+    void on_b_valueChanged();
+
+    void on_c_valueChanged();
+
+    void on_d_valueChanged();
 
 
 
