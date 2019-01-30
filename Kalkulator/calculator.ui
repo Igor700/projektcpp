@@ -31,12 +31,12 @@
      <rect>
       <x>0</x>
       <y>0</y>
-      <width>421</width>
-      <height>697</height>
+      <width>824</width>
+      <height>691</height>
      </rect>
     </property>
     <property name="currentIndex">
-     <number>4</number>
+     <number>0</number>
     </property>
     <widget class="QWidget" name="tab">
      <attribute name="title">
@@ -823,6 +823,11 @@
         <string>Długość</string>
        </property>
       </item>
+      <item>
+       <property name="text">
+        <string>Waluty</string>
+       </property>
+      </item>
      </widget>
      <widget class="QLineEdit" name="input">
       <property name="geometry">
@@ -912,11 +917,7 @@
       </property>
      </widget>
     </widget>
-    <widget class="QWidget" name="tab_4">
-     <attribute name="title">
-      <string>Waluty</string>
-     </attribute>
-    </widget>
+   
     <widget class="QWidget" name="tab_5">
      <attribute name="title">
       <string>Wykresy</string>

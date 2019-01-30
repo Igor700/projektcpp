@@ -6,6 +6,7 @@
 #include <QDate>
 #include <QtMath>
 
+
 Calculator::Calculator(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::Calculator)
@@ -32,8 +33,11 @@ Calculator::Calculator(QWidget *parent) :
     speed << "Mile na godzine" << "Kilometry na godzine";
     data << "Kb" << "KB" << "Mb" << "MB" << "Gb" << "GB" << "Tb" << "TB";
     measure << "Centymetry" << "Metry" << "Kilometry";
+    currency << "PLN" << "USD" << "EUR" << "GBP" << "CHF" << "RUB";
 
 	ui->calendarWidget->setMinimumDate(QDate::currentDate());
+
+
     chart(ui->chart);
 
 
@@ -558,6 +562,21 @@ void Calculator::on_comboBox_activated(int index)
             }
         }
         break;
+    case 6:
+        if (ui->comboBox->itemText(index) == "Waluty")
+        {
+            if (!ui->comboBox->currentText().isEmpty())
+            {
+                ui->comboBox_2->clear();
+                ui->comboBox_3->clear();
+            }
+            if(ui->comboBox_2->currentText().isEmpty())
+            {
+                ui->comboBox_2->addItems(currency);
+                ui->comboBox_3->addItems(currency);
+            }
+        }
+        break;
      default:
         break;
     }
@@ -652,6 +671,35 @@ void Calculator::on_input_textChanged(const QString &arg1)
                 ui->output->setText(QString::number(number));
             }
         }
+        else if (ui->comboBox_2->currentText() == "PLN")
+        {
+            if (ui->comboBox_3->currentText() == "USD")
+            {
+                number = arg1.toDouble()/3.7577;
+                ui->output->setText(QString::number(number));
+            }
+            else if (ui->comboBox_3->currentText() == "EUR")
+            {
+                number = arg1.toDouble()/4.2952;
+                ui->output->setText(QString::number(number));
+            }
+            else if (ui->comboBox_3->currentText() == "CHF")
+            {
+                number = arg1.toDouble()/3.7725;
+                ui->output->setText(QString::number(number));
+            }
+            else if (ui->comboBox_3->currentText() == "GBP")
+            {
+                number = arg1.toDouble()/4.9260;
+                ui->output->setText(QString::number(number));
+            }
+            else if (ui->comboBox_3->currentText() == "RUB")
+            {
+                number = arg1.toDouble()/0.0569;
+                ui->output->setText(QString::number(number));
+            }
+
+    }
     }
     else if(ui->comboBox_2->currentIndex() == 1)
     {
@@ -734,6 +782,38 @@ void Calculator::on_input_textChanged(const QString &arg1)
                 ui->output->setText(QString::number(number));
             }
         }
+
+        else if (ui->comboBox_2->currentText() == "USD")
+        {
+            if (ui->comboBox_3->currentText() == "PLN")
+            {
+                number = arg1.toDouble()*3.7577;
+                ui->output->setText(QString::number(number));
+            }
+            else if (ui->comboBox_3->currentText() == "EUR")
+            {
+                number = arg1.toDouble()*0.87;
+                ui->output->setText(QString::number(number));
+            }
+            else if (ui->comboBox_3->currentText() == "CHF")
+            {
+                number = arg1.toDouble()*0.99;
+                ui->output->setText(QString::number(number));
+            }
+            else if (ui->comboBox_3->currentText() == "GBP")
+            {
+                number = arg1.toDouble()*0.76;
+                ui->output->setText(QString::number(number));
+            }
+            else if (ui->comboBox_3->currentText() == "RUB")
+            {
+                number = arg1.toDouble()*66.34;
+                ui->output->setText(QString::number(number));
+            }
+
+    }
+
+
     }
     else if(ui->comboBox_2->currentIndex() == 2)
     {
@@ -801,6 +881,36 @@ void Calculator::on_input_textChanged(const QString &arg1)
                 ui->output->setText(QString::number(number));
             }
         }
+
+        else if (ui->comboBox_2->currentText() == "EUR")
+        {
+            if (ui->comboBox_3->currentText() == "USD")
+            {
+                number = arg1.toDouble()*1.14;
+                ui->output->setText(QString::number(number));
+            }
+            else if (ui->comboBox_3->currentText() == "PLN")
+            {
+                number = arg1.toDouble()*4.2952;
+                ui->output->setText(QString::number(number));
+            }
+            else if (ui->comboBox_3->currentText() == "CHF")
+            {
+                number = arg1.toDouble()*1.13;
+                ui->output->setText(QString::number(number));
+            }
+            else if (ui->comboBox_3->currentText() == "GBP")
+            {
+                number = arg1.toDouble()*0.87;
+                ui->output->setText(QString::number(number));
+            }
+            else if (ui->comboBox_3->currentText() == "RUB")
+            {
+                number = arg1.toDouble()*75.82;
+                ui->output->setText(QString::number(number));
+            }
+
+    }
     }
     else if(ui->comboBox_2->currentIndex() == 3)
     {
@@ -842,6 +952,35 @@ void Calculator::on_input_textChanged(const QString &arg1)
                 ui->output->setText(QString::number(number));
             }
         }
+        else if (ui->comboBox_2->currentText() == "GBP")
+        {
+            if (ui->comboBox_3->currentText() == "USD")
+            {
+                number = arg1.toDouble()*1.31;
+                ui->output->setText(QString::number(number));
+            }
+            else if (ui->comboBox_3->currentText() == "PLN")
+            {
+                number = arg1.toDouble()*4.92;
+                ui->output->setText(QString::number(number));
+            }
+            else if (ui->comboBox_3->currentText() == "CHF")
+            {
+                number = arg1.toDouble()*1.30;
+                ui->output->setText(QString::number(number));
+            }
+            else if (ui->comboBox_3->currentText() == "EUR")
+            {
+                number = arg1.toDouble()*1.15;
+                ui->output->setText(QString::number(number));
+            }
+            else if (ui->comboBox_3->currentText() == "RUB")
+            {
+                number = arg1.toDouble()*86.91;
+                ui->output->setText(QString::number(number));
+            }
+
+    }
     }
     else if(ui->comboBox_2->currentIndex() == 4)
     {
@@ -883,6 +1022,35 @@ void Calculator::on_input_textChanged(const QString &arg1)
                 ui->output->setText(QString::number(number));
             }
         }
+        else if (ui->comboBox_2->currentText() == "CHF")
+        {
+            if (ui->comboBox_3->currentText() == "USD")
+            {
+                number = arg1.toDouble()*1.01;
+                ui->output->setText(QString::number(number));
+            }
+            else if (ui->comboBox_3->currentText() == "PLN")
+            {
+                number = arg1.toDouble()*3.78;
+                ui->output->setText(QString::number(number));
+            }
+            else if (ui->comboBox_3->currentText() == "EUR")
+            {
+                number = arg1.toDouble()*0.88;
+                ui->output->setText(QString::number(number));
+            }
+            else if (ui->comboBox_3->currentText() == "GBP")
+            {
+                number = arg1.toDouble()*0.77;
+                ui->output->setText(QString::number(number));
+            }
+            else if (ui->comboBox_3->currentText() == "RUB")
+            {
+                number = arg1.toDouble()*66.80;
+                ui->output->setText(QString::number(number));
+            }
+
+    }
     }
     else if(ui->comboBox_2->currentIndex() == 5)
     {
@@ -924,6 +1092,35 @@ void Calculator::on_input_textChanged(const QString &arg1)
                 ui->output->setText(QString::number(number));
             }
         }
+        else if (ui->comboBox_2->currentText() == "RUB")
+        {
+            if (ui->comboBox_3->currentText() == "USD")
+            {
+                number = arg1.toDouble()*0.151;
+                ui->output->setText(QString::number(number));
+            }
+            else if (ui->comboBox_3->currentText() == "PLN")
+            {
+                number = arg1.toDouble()*0.0567;
+                ui->output->setText(QString::number(number));
+            }
+            else if (ui->comboBox_3->currentText() == "CHF")
+            {
+                number = arg1.toDouble()*1.015;
+                ui->output->setText(QString::number(number));
+            }
+            else if (ui->comboBox_3->currentText() == "GBP")
+            {
+                number = arg1.toDouble()*0.01149;
+                ui->output->setText(QString::number(number));
+            }
+            else if (ui->comboBox_3->currentText() == "EUR")
+            {
+                number = arg1.toDouble()*0.01321;
+                ui->output->setText(QString::number(number));
+            }
+
+    }
     }
     else if(ui->comboBox_2->currentIndex() == 6)
     {

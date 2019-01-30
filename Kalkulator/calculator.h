@@ -93,6 +93,7 @@ private slots:
 
 
 
+
 private:
     Ui::Calculator *ui;
 
@@ -102,6 +103,8 @@ private:
     bool subtractClicked;
     bool multiplyClicked;
     bool divideClicked;
+
+
 
     double sumTemp;
     double factorTemp;
@@ -114,6 +117,7 @@ private:
     QStringList speed;
     QStringList data;
     QStringList measure;
+    QStringList currency;
 
 };
 
